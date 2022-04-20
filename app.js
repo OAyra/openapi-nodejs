@@ -24,13 +24,13 @@ app.use(
 	  swaggerUi.serve,
 	  swaggerUi.setup(null, {
 		      swaggerOptions: {
-			            url: `http://${process.env.backendip}:3030/api-docs`,
+			            url: `http://${process.env.BACKENDIP}:3030/api-docs`,
 			          },
 		    })
 );
 
-console.log("myport: " + process.env.backendip);
-console.log(`App running on port http://${process.env.backendip}:3030`);
-console.log(`OpenAPI documentation available in http://${process.env.backendip}:3030/api-documentation`);
+console.log("myport: " + process.env.BACKENDIP);
+console.log(`App running on port http://${process.env.BACKENDIP}:3030`);
+console.log(`OpenAPI documentation available in http://${process.env.BACKENDIP}:3030/api-documentation`);
 
 module.exports = app;
