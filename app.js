@@ -13,27 +13,24 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// OpenAPI routes
 initialize({
-  app,
-  apiDoc: require("./api/api-doc"),
-  paths: "./api/paths",
+	  app,
+	  apiDoc: require("./api/api-doc"),
+	  paths: "./api/paths",
 });
 
-// OpenAPI UI
 app.use(
-  "/api-documentation",
-  swaggerUi.serve,
-  swaggerUi.setup(null, {
-    swaggerOptions: {
-      url: "http://localhost:3030/api-docs",
-    },
-  })
+	  "/api-documentation",
+	  swaggerUi.serve,
+	  swaggerUi.setup(null, {
+		      swaggerOptions: {
+			            url: `http://${process.env.backendip}:3030/api-docs`,
+			          },
+		    })
 );
 
-console.log("App running on port http://localhost:3030");
-console.log(
-  "OpenAPI documentation available in http://localhost:3030/api-documentation"
-);
+console.log("myport: " + process.env.backendip);
+console.log(`App running on port http://${process.env.backendip}:3030`);
+console.log(`OpenAPI documentation available in http://${process.env.backendip}:3030/api-documentation`);
 
 module.exports = app;
