@@ -16,11 +16,11 @@ module.exports = function () {
   }
 
   GET.apiDoc = {
-    summary: "Fetch todos.",
-    operationId: "getTodos",
+    summary: "Fetch veinte.",
+    operationId: "getVeinte",
     responses: {
       200: {
-        description: "List of todos.",
+        description: "List of veinte.",
         schema: {
           type: "array",
           items: {
