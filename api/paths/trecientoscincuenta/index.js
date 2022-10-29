@@ -17,7 +17,7 @@ module.exports = function () {
 
   GET.apiDoc = {
     summary: "Fetch trescientos cincuenta.",
-    operationId: "getVeinte",
+    operationId: "getTrescientoscincuenta",
     responses: {
       200: {
         description: "List of trescientos cincuenta.",
